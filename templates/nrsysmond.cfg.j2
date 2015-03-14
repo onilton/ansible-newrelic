@@ -133,3 +133,9 @@ collector_host={{ newrelic_collector_host }}
 # Default: 30
 #
 timeout={{ newrelic_timeout }}
+
+# Change hostname in New Relic configuration
+# https://docs.newrelic.com/docs/servers/new-relic-servers-linux/maintenance/changing-linux-server-name#configuration-file
+{% if newrelic_hostname is defined %}
+hostname={{ newrelic_hostname }}
+{% endif %}
